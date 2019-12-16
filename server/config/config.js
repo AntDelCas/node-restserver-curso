@@ -23,6 +23,5 @@ if (process.env.NODE_ENV === 'dev') {
     urlDB = process.env.MONGO_URI;
     //  urlDB = 'mongodb+srv://user:pass@cursomongo-beosp.mongodb.net/cafe?retryWrites=true&w=majority';
 }
-}
 
 process.env.URLDB = urlDB;
