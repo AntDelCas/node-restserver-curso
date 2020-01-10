@@ -2,6 +2,7 @@ require('./config/config');
 
 const express = require('express');
 const app = express();
+const path = require('path');
 
 // Using Node.js `require()`
 const mongoose = require('mongoose');
@@ -14,10 +15,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
+//habilitar la carpeta public
+app.use(express.static(path.resolve(__dirname, '../public')));
+
+console.log(path.resolve(__dirname, '../public'));
+
+
 // Configuración global de routes
 /* app.use(require('./routes/usuario'));
 app.use(require('./routes/login')); */
-app.use(require('./routes/index'))
+app.use(require('./routes/index'));
 
 
 mongoose.connect(process.env.URLDB, {
